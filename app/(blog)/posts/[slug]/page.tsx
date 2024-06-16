@@ -1,23 +1,23 @@
-import type { Metadata, ResolvingMetadata } from 'next';
-import { groq, type PortableTextBlock } from 'next-sanity';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
+import type { Metadata, ResolvingMetadata } from "next";
+import { groq, type PortableTextBlock } from "next-sanity";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
-import Avatar from '../../avatar';
-import CoverImage from '../../cover-image';
-import MoreStories from '../../more-stories';
-import PortableText from '../../portable-text';
+import Avatar from "../../avatar";
+import CoverImage from "../../cover-image";
+import MoreStories from "../../more-stories";
+import PortableText from "../../portable-text";
 
 import type {
   PostQueryResult,
   PostSlugsResult,
   SettingsQueryResult,
-} from '@/sanity.types';
-import * as demo from '@/sanity/lib/demo';
-import { sanityFetch } from '@/sanity/lib/fetch';
-import { postQuery, settingsQuery } from '@/sanity/lib/queries';
-import { resolveOpenGraphImage } from '@/sanity/lib/utils';
+} from "@/sanity.types";
+import * as demo from "@/sanity/lib/demo";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { postQuery, settingsQuery } from "@/sanity/lib/queries";
+import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 
 type Props = {
   params: { slug: string };
@@ -28,7 +28,7 @@ const postSlugs = groq`*[_type == "post"]{slug}`;
 export async function generateStaticParams() {
   const params = await sanityFetch<PostSlugsResult>({
     query: postSlugs,
-    perspective: 'published',
+    perspective: "published",
     stega: false,
   });
   return params.map(({ slug }) => ({ slug: slug?.current }));
@@ -36,7 +36,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const post = await sanityFetch<PostQueryResult>({
     query: postQuery,

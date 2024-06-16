@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import Avatar from './avatar';
-import CoverImage from './cover-image';
+import Avatar from "./avatar";
+import CoverImage from "./cover-image";
 
-import type { MoreStoriesQueryResult } from '@/sanity.types';
-import { sanityFetch } from '@/sanity/lib/fetch';
-import { moreStoriesQuery } from '@/sanity/lib/queries';
+import type { MoreStoriesQueryResult } from "@/sanity.types";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { moreStoriesQuery } from "@/sanity/lib/queries";
 
 export default async function MoreStories(params: {
   skip: string;

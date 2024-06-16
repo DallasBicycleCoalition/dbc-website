@@ -5,10 +5,10 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 
 const config = {
-    projectId: projectId,
-    dataset: dataset,
-    apiVersion: "2024-06-02",
-  }
+  projectId: projectId,
+  dataset: dataset,
+  apiVersion: "2024-06-02",
+};
 
 export async function getHomePage(): Promise<Homepage> {
   const data = await createClient(config).fetch(
@@ -31,8 +31,8 @@ export async function getHomePage(): Promise<Homepage> {
         },
         content
       }
-    }[0]`
-  )
+    }[0]`,
+  );
 
   return data;
 }
