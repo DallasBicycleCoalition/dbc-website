@@ -143,7 +143,7 @@ export type Homepage = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  heroimage?: {
+  homePageHeroImage?: {
     asset?: {
       _ref: string;
       _type: "reference";

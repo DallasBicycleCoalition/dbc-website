@@ -19,9 +19,9 @@ export async function getHomePage(): Promise<Homepage> {
       title,
       "slug": slug.current,
       content,
-      "heroImage": {
-        "asset": heroimage.asset->url,
-        "altText": heroimage.altText
+      "homePageHeroImage": {
+        "asset": homePageHeroImage.asset->url,
+        "altText": homePageHeroImage.altText
       },
       "whoWeAre": {
         heading,

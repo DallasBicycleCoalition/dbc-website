@@ -817,7 +817,7 @@
           "type": "string"
         }
       },
-      "heroimage": {
+      "homePageHeroImage": {
         "type": "objectAttribute",
         "value": {
           "type": "object",

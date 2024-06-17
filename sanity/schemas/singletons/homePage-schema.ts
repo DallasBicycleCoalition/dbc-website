@@ -6,8 +6,8 @@ export const homePage = defineType({
   type: "document",
   fields: [
     {
-      title: "Hero image",
-      name: "heroimage",
+      title: "Homepage Hero",
+      name: "homePageHeroImage",
       type: "image",
       options: {
         hotspot: true,
