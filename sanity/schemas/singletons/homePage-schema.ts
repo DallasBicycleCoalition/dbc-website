@@ -1,4 +1,5 @@
 import { defineType } from "sanity";
+import { captionedImage } from "../captionedImage";
 
 export const homePage = defineType({
   name: "homepage",
@@ -72,5 +73,41 @@ export const homePage = defineType({
         },
       ],
     },
+    {
+      name: "whatWeDo",
+      title: "What We Do",
+      type: "object",
+      fields: [
+        {
+          name: "heading",
+          title: "Heading",
+          type: "string"
+        },
+        {
+          name: "whatWeDoPics",
+          title: "What We Do Pics",
+          type: "array",
+          of: [{type: "captionedImage"}]
+        }
+      ]
+    },
+    {
+      name: "bikePlan",
+      title: "Bike Plan",
+      type: "object",
+      fields: [
+        {
+          name: "heading",
+          title: "Heading",
+          type: "string"
+        },
+        {
+          title: "Content",
+          name: "content",
+          type: "array",
+          of: [{ type: "block" }]
+        }
+      ]
+    }
   ],
 });

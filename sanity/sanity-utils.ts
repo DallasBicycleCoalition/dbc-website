@@ -24,12 +24,24 @@ export async function getHomePage(): Promise<Homepage> {
         "altText": homePageHeroImage.altText
       },
       "whoWeAre": {
-        heading,
+        "heading": whoWeAre.heading,
         "photo": {
           "asset": whoWeAre.photo.asset->url,
           "altText": whoWeAre.photo.altText
         },
-        content
+        "content" : whoWeAre.content
+      },
+      "whatWeDo": {
+        "heading": whatWeDo.heading,
+        "whatWeDoPics": whatWeDo.whatWeDoPics[] {
+          "image": image.asset->url,
+          "altText": altText,
+          "caption": caption
+        }
+      },
+      "bikePlan": {
+        "heading": bikePlan.heading,
+        "content": bikePlan.content
       }
     }[0]`,
   );

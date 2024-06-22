@@ -19,6 +19,7 @@ import { assistWithPresets } from "@/sanity/plugins/assist";
 import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
 import { homePage } from "./sanity/schemas/singletons/homePage-schema";
+import { captionedImage } from "./sanity/schemas/captionedImage";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
 
@@ -39,6 +40,8 @@ export default defineConfig({
       // Documents
       post,
       author,
+      // Other
+      captionedImage
     ],
   },
   plugins: [
