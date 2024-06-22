@@ -1,24 +1,25 @@
-import "../globals.css";
+import '../globals.css';
+import '../css-reset.css';
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { Metadata } from 'next';
 import {
   VisualEditing,
   toPlainText,
   type PortableTextBlock,
-} from "next-sanity";
-import { Inter } from "next/font/google";
-import { draftMode } from "next/headers";
-import { Suspense } from "react";
+} from 'next-sanity';
+import { Inter } from 'next/font/google';
+import { draftMode } from 'next/headers';
+import { Suspense } from 'react';
 
-import AlertBanner from "./alert-banner";
-import PortableText from "./portable-text";
+import AlertBanner from './alert-banner';
+import PortableText from './portable-text';
 
-import type { SettingsQueryResult } from "@/sanity.types";
-import * as demo from "@/sanity/lib/demo";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { settingsQuery } from "@/sanity/lib/queries";
-import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import type { SettingsQueryResult } from '@/sanity.types';
+import * as demo from '@/sanity/lib/demo';
+import { sanityFetch } from '@/sanity/lib/fetch';
+import { settingsQuery } from '@/sanity/lib/queries';
+import { resolveOpenGraphImage } from '@/sanity/lib/utils';
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -52,9 +53,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 async function Footer() {
@@ -72,7 +73,7 @@ async function Footer() {
             value={footer as PortableTextBlock[]}
           />
         ) : (
-          <p>bikes are nice</p>
+          <div></div>
         )}
       </div>
     </footer>
