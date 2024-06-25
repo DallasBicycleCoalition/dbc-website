@@ -1,13 +1,10 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import { groq, type PortableTextBlock } from "next-sanity";
+import { groq, PortableText, type PortableTextBlock } from "next-sanity";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 import Avatar from "../../avatar";
 import CoverImage from "../../cover-image";
-import MoreStories from "../../more-stories";
-import PortableText from "../../portable-text";
 
 import type {
   PostQueryResult,
@@ -99,7 +96,6 @@ export default async function PostPage({ params }: Props) {
         </div>
         {post.content?.length && (
           <PortableText
-            className="mx-auto max-w-2xl"
             value={post.content as PortableTextBlock[]}
           />
         )}
@@ -109,9 +105,6 @@ export default async function PostPage({ params }: Props) {
         <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
           Recent Stories
         </h2>
-        <Suspense>
-          <MoreStories skip={post._id} limit={2} />
-        </Suspense>
       </aside>
     </div>
   );
