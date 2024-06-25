@@ -160,6 +160,7 @@ export type Layout = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  title?: string;
   logo?: {
     asset?: {
       _ref: string;
@@ -181,6 +182,7 @@ export type Homepage = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  title?: string;
   homePageHeroImage?: {
     asset?: {
       _ref: string;
@@ -193,7 +195,6 @@ export type Homepage = {
     altText?: string;
     _type: "image";
   };
-  title?: string;
   slug?: Slug;
   content?: string;
   whoWeAre?: {

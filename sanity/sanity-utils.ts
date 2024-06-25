@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity";
-import { Homepage } from "../sanity.types.js";
+import { Homepage, Layout } from "../sanity.types.js";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
@@ -43,6 +43,23 @@ export async function getHomePage(): Promise<Homepage> {
         "heading": bikePlan.heading,
         "content": bikePlan.content
       }
+    }[0]`,
+  );
+
+  return data;
+}
+
+export async function getLayout(): Promise<Layout> {
+  const data = await createClient(config).fetch(
+    groq`
+    *[_type == "layout"]{
+      _id,
+      _createdAt,
+      "logo": {
+        "asset": logo.asset->url,
+        "altText": logo.altText
+      },
+      "landingPageLink": landingPageLink
     }[0]`,
   );
 

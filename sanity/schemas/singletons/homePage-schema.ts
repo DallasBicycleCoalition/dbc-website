@@ -6,8 +6,13 @@ export const homePage = defineType({
   type: "document",
   fields: [
     {
-      title: "Homepage Hero",
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
       name: "homePageHeroImage",
+      title: "Homepage Hero",
       type: "image",
       options: {
         hotspot: true,
@@ -19,11 +24,6 @@ export const homePage = defineType({
           title: "Alternative text",
         },
       ],
-    },
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
     },
     {
       name: "slug",
@@ -65,8 +65,8 @@ export const homePage = defineType({
           },
         },
         {
-          title: "Content",
           name: "content",
+          title: "Content",
           type: "array",
           of: [{ type: "block" }],
         },
@@ -101,8 +101,8 @@ export const homePage = defineType({
           type: "string",
         },
         {
-          title: "Content",
           name: "content",
+          title: "Content",
           type: "array",
           of: [{ type: "block" }],
         },

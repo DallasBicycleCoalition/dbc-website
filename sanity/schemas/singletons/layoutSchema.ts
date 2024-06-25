@@ -6,8 +6,13 @@ export const layoutSchema = defineType({
   type: "document",
   fields: [
     {
-      title: "Logo",
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
       name: "logo",
+      title: "Logo",
       type: "image",
       options: {
         hotspot: true,
