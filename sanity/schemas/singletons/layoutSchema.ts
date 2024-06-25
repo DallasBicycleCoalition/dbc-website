@@ -1,6 +1,6 @@
 import { defineType } from "sanity";
 
-export const layout = defineType({
+export const layoutSchema = defineType({
   name: "layout",
   title: "Layout",
   type: "document",

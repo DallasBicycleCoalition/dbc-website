@@ -6,23 +6,23 @@ import { visionTool } from "@sanity/vision";
 import { PluginOptions, defineConfig } from "sanity";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import {
-  presentationTool,
   defineDocuments,
   defineLocations,
+  presentationTool,
   type DocumentLocation,
 } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 
 import { apiVersion, dataset, projectId, studioUrl } from "@/sanity/lib/api";
-import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
+import { resolveHref } from "@/sanity/lib/utils";
 import { assistWithPresets } from "@/sanity/plugins/assist";
+import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
-import { homePage } from "./sanity/schemas/singletons/homePage-schema";
-import { layout } from "./sanity/schemas/singletons/layout";
-import { captionedImage } from "./sanity/schemas/captionedImage";
 import settings from "@/sanity/schemas/singletons/settings";
-import { resolveHref } from "@/sanity/lib/utils";
+import { captionedImage } from "./sanity/schemas/captionedImage";
+import { homePage } from "./sanity/schemas/singletons/homePage-schema";
+import { layoutSchema } from "./sanity/schemas/singletons/layoutSchema";
 
 const homeLocation = {
   title: "Home",
@@ -38,12 +38,12 @@ export default defineConfig({
       // Singletons
       settings,
       homePage,
-      layout,
+      layoutSchema,
       // Documents
       post,
       author,
       // Other
-      captionedImage
+      captionedImage,
     ],
   },
   plugins: [
