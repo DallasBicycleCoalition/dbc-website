@@ -4,6 +4,7 @@ import '../css-reset.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import {
+  PortableText,
   VisualEditing,
   toPlainText,
   type PortableTextBlock,
@@ -13,7 +14,6 @@ import { draftMode } from 'next/headers';
 import { Suspense } from 'react';
 
 import AlertBanner from './alert-banner';
-import PortableText from './portable-text';
 
 import type { SettingsQueryResult } from '@/sanity.types';
 import * as demo from '@/sanity/lib/demo';
@@ -65,11 +65,10 @@ async function Footer() {
   const footer = data?.footer || [];
 
   return (
-    <footer className="bg-accent-1 border-accent-2 border-t">
-      <div className="container mx-auto px-5">
+    <footer>
+      <div>
         {footer.length > 0 ? (
           <PortableText
-            className="prose-sm text-pretty bottom-0 w-full max-w-none bg-white py-12 text-center md:py-20"
             value={footer as PortableTextBlock[]}
           />
         ) : (
@@ -86,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
+    <html lang="en">
       <body>
         <section className="min-h-screen">
           {draftMode().isEnabled && <AlertBanner />}
