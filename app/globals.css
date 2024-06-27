@@ -28,12 +28,19 @@
 
 /* Begin page container width stuff */
 main,
+header,
 footer {
   margin: 0 10vw;
 }
 
+header img {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 @media (max-width: 500px) {
   main,
+  header,
   footer {
     margin: 0 1em;
   }
